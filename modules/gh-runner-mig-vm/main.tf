@@ -165,33 +165,3 @@ module "mig" {
   /* autoscaler */
   autoscaling_enabled = true
 }
-/*****************************************
-  FW
- *****************************************/
-resource "google_compute_firewall" "http-access" {
-  name    = "${local.instance_name}-http"
-  project = var.project_id
-  network = local.network_name
-
-  allow {
-    protocol = "tcp"
-    ports    = ["8080"]
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["gh-runner-vm"]
-}
-
-resource "google_compute_firewall" "ssh-access" {
-  name    = "${local.instance_name}-ssh"
-  project = var.project_id
-  network = local.network_name
-
-  allow {
-    protocol = "tcp"
-    ports    = ["22"]
-  }
-
-  source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["gh-runner-vm"]
-}
