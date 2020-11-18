@@ -164,4 +164,5 @@ module "mig" {
 
   /* autoscaler */
   autoscaling_enabled = true
+  min_replicas = var.min_replicas
 }

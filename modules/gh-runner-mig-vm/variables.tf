@@ -89,7 +89,7 @@ variable "instance_name" {
 variable "target_size" {
   type        = number
   description = "The number of runner instances"
-  default     = 2
+  default     = 1
 }
 
 variable "service_account" {
@@ -142,4 +142,8 @@ variable "custom_metadata" {
   type        = map
   description = "User provided custom metadata"
   default     = {}
+}
+
+variable "min_replicas" {
+  default = 1
 }
