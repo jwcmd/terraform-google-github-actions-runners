@@ -148,6 +148,7 @@ module "mig_template" {
   tags = [
     "gh-runner-vm"
   ]
+
 }
 /*****************************************
   Runner MIG
@@ -165,4 +166,5 @@ module "mig" {
   /* autoscaler */
   autoscaling_enabled = true
   min_replicas = var.min_replicas
+  cooldown_period = var.cooldown_period
 }

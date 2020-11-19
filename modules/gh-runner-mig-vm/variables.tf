@@ -147,3 +147,7 @@ variable "custom_metadata" {
 variable "min_replicas" {
   default = 1
 }
+
+variable "cooldown_period" {
+  default = 60
+}
